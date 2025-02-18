@@ -5,12 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDE Repo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rubik+Puddles&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>🚀 SDE Preparation Repository</h1>
-        <p>Mastering Development & DSA for the SDE Role</p>
-        <button class="glow-on-hover">Explore More</button>
+        <div class="hover-text">
+            <p class="text text-hindi">नमस्ते 😊, यह रेपो मेरे SDE तैयारी के दौरान किए गए कार्यों को प्रदर्शित करने के लिए है।</p>
+            <p class="text text-english">Hello😊, This repo showcases what I learned and made in my SDE Preparation.</p>
+        </div>
+        <!-- Two Section Layout -->
+        <div class="sections">
+            <!-- Projects Section -->
+            <section class="projects">
+                <h2>My Projects</h2>
+                <div class="card-container">
+                    <!-- Project Cards -->
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Project 1: Project Name</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Details about the project...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Project 2: Project Name</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Details about the project...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Project 3: Project Name</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Details about the project...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more projects here -->
+                </div>
+            </section>
+
+            <!-- DSA Questions Section -->
+            <section class="dsa-questions">
+                <h2>DSA Problems Solved</h2>
+                <!-- Topic 1 -->
+                <button class="accordion">Topic 1: Arrays </button>
+                <div class="panel">
+                    <ul>
+                        <li>Problem 1: Solved</li>
+                        <li>Problem 2: Solved</li>
+                        <li>Problem 3: Solved</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 2 -->
+                <button class="accordion">Topic 2: Linked Lists</button>
+                <div class="panel">
+                    <ul>
+                        <li>Problem 1: Solved</li>
+                        <li>Problem 2: Solved</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 3 -->
+                <button class="accordion">Topic 3: Trees</button>
+                <div class="panel">
+                    <ul>
+                        <li>Problem 1: Solved</li>
+                        <li>Problem 2: Solved</li>
+                    </ul>
+                </div>
+
+                <!-- Add more topics as needed -->
+            </section>
+        </div>
     </div>
+
+    <footer class="footer">
+        <p>© 2024 CGPA Calculator. Created by <a href="https://www.linkedin.com/in/aniket-yadav-2162ab239/" target="_blank">Aniket Yadav <i class="fa-solid fa-share"></i></a></p>
+    </footer>
+
+    <script>
+        // JavaScript for accordion functionality
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', () => {
+                const panel = accordion.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
 </body>
 </html>
