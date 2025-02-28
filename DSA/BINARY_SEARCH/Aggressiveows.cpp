@@ -7,42 +7,45 @@ using namespace std;
 class Solution {
 public:
     // Function to check if we can place 'm' cows with at least 'mid' distance apart
-    bool canPlaceCows(vector<int> arr, int mid, int m) {
+    bool PlaceKrSkte(vector<int> arr, int mid, int m) {
         int n = arr.size();
-        int countCows = 1; // First cow placed at the first position
-        int lastPlaced = arr[0];
+        int cntCows = 1; // Place the first cow in the first stall
+        int last = arr[0]; // Track the last placed cow's position
 
-        for (int i = 1; i < n; i++) { // Start from the second position
-            if (arr[i] - lastPlaced >= mid) { // Check if we can place a cow here
-                countCows++;
-                lastPlaced = arr[i]; // Update last placed cow position
+        for(int i = 0; i < n; i++) {
+            // If the gap between the current stall and last placed cow is at least 'mid', place a cow here
+            if(arr[i] - last >= mid) {
+                cntCows++; // Place a cow
+                last = arr[i]; // Update last placed cow position
             }
-            if (countCows >= m) { // If we placed all cows successfully
+            // If all cows are placed successfully, return true
+            if(cntCows >= m) {
                 return true;
             }
         }
-        return false;
+        return false; // If we couldn't place all cows, return false
     }
 
-    // Function to find the largest minimum distance for placing 'm' cows
+    // Function to find the largest minimum distance between cows
     int maxDistance(vector<int>& position, int m) {
         int n = position.size();
-        sort(position.begin(), position.end()); // Sort stall positions
+        sort(position.begin(), position.end()); // Sort the stalls to make placing cows easier
         
-        int left = 1, right = position[n-1] - position[0]; // Minimum & maximum possible distances
-        int bestDist = 0;
+        int left = 1, right = position[n-1] - position[0]; // Possible distance range
 
-        // Binary search to find the optimal largest minimum distance
-        while (left <= right) {
+        // Binary search to find the maximum minimum distance
+        while(left <= right) {
             int mid = (left + right) / 2;
-            if (canPlaceCows(position, mid, m)) {
-                bestDist = mid; // Update best distance
-                left = mid + 1; // Try to maximize distance
-            } else {
-                right = mid - 1; // Reduce the search range
+            
+            // Check if it's possible to place all cows with at least 'mid' distance
+            if(PlaceKrSkte(position, mid, m)) {
+                left = mid + 1; // Try for a bigger distance
+            }
+            else {
+                right = mid - 1; // Reduce the distance
             }
         }
-        return bestDist;
+        return right; // The largest possible minimum distance
     }
 };
 
