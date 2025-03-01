@@ -20,7 +20,7 @@ const Mydata=()=>{
                     <tr className="bg-black">
                     <th className="border border-black px-4 py-2">Name</th>
                     <th className="border border-black px-4 py-2">Age</th>
-                    <th className="border border-black px-4 py-2">Country</th>
+                    <th className="border border-black px-4 py-2">Country</th> 
                     </tr>
                 </thead>
                 <tbody>
