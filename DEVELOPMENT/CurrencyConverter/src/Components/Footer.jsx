@@ -8,7 +8,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white p-4 flex flex-col md:flex-row justify-between items-center w-full sticky bottom-0">
+        <footer className="border border-black rounded-lg  backdrop-blur-sm bg-black/40 text-white p-4 flex flex-col md:flex-row justify-between items-center w-full sticky bottom-0">
             {/* Social Media Icons */}
             <div className="flex space-x-8 mb-2 md:mb-0">
                 <a

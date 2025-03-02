@@ -31,7 +31,7 @@ return (
         }}
     >
         <div className=" w-full flex flex-1 justify-center items-center">
-            <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+            <div className="w-full max-w-md mx-auto border border-gray-60 rounded-xl p-5 backdrop-blur-sm bg-black/30">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
