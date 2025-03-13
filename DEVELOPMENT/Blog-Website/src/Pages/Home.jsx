@@ -3,7 +3,8 @@ import appwriteService from "../appwrite/conf"
 import { BlogCard, Button1, Container, PostCard,FadeInWrapper } from '../Components/index'
 import BlurText from '../Components/Animation/BlurText';
 import SplitText from '../Components/Animation/SplitText';
-import Hero from "../Components/Hero.jpg"
+import Hero from "../assets/Hero.jpg"
+import Foto from "../assets/Foto.png"
 import TiltedCard from '../Components/Animation/TitledCard';
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -18,7 +19,7 @@ const Home = () => {
         })
     },[])
     return (
-        <div className='w-[100%] py-8 bg-[rgba(30,30,30,255)] min-h-screen'>
+        <div className='w-[100%] py-8 bg-[rgba(30,30,30,255)] min-h-screen '>
         <div className='flex flex-row mx-28 '>
           <div className="flex font-bold  tracking-wide mx-4" >
           <BlurText
@@ -39,10 +40,10 @@ const Home = () => {
           </div>
           <p className="text-gray-400 font-extrabold mt-4 ml-4">Blog about Tech<br />Life<br />Anime.</p>
           <div className="flex space-x-4 ml-96 mt-4">
-          <Button1 icon={FaGithub} link="https://instagram.com" className="shadow-gray-700 text-black"/>
+          <Button1 icon={FaGithub} link="https://github.com/Aniketyadav05" className="shadow-gray-700 text-black"/>
       
     
-          <Button1 icon={FaXTwitter} link="/dashboard" className=" shadow-gray-700 " />
+          <Button1 icon={FaXTwitter} link="https://x.com/AniketYadav05_" className=" shadow-gray-700 " />
 
           </div>
           
@@ -53,7 +54,7 @@ const Home = () => {
         readTime={1}
         description="Hello, I'm Aniket Here in this website me and some of my friends write blogs about our life, what we learnt in tech world, what type of anime is currently our favourite and many more things. if You want to join us and read our blogs you can sign up and read the blogs and can also write your own blogs❤️❤️"
         tags={["Life", "Anime", "Tech"]}
-        image={Hero}
+        image={Foto}
         className="w-[1250px] mb-10"
         />
 {posts.length=== 0 ?(
@@ -61,18 +62,18 @@ const Home = () => {
   
   <BlogCard
     date="March 14, 2025"
-    title="The Timeless Allure of Film Photography"
-    readTime={8}
-    description="In the digital age, where cameras are in everyone’s pocket, the resurgence of film photography might seem surprising. Yet, it has evolved from a medium of necessity to a cherished art form."
+    title="The AI Takeover: Should We Be Worried?"
+    readTime={3}
+    description="Artificial Intelligence is advancing at an insane pace, but should we be concerned? While AI is great at making our lives easier (hello, ChatGPT), it also raises ethical questions about job loss and bias. The key? Responsible AI development and a human-first approach. For now, let's just hope Skynet isn’t real."
     tags={["Life", "Anime", "Tech"]}
     image={Hero}
-    className="flex-1"
+    className="flex-1 object-cover"
   />
 
   <div className="flex-1 flex flex-col items-center justify-center">
     <SplitText
       text="WANT TO POST BLOGS AND SEE OTHER BLOGS"
-      className="text-8xl font-semibold text-center text-gray-800 "
+      className="text-8xl font-semibold text-center text-gray-800  "
       delay={100}
       animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
       animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -90,9 +91,9 @@ const Home = () => {
   
   <BlogCard
     date="March 14, 2025"
-    title="The Timeless Allure of Film Photography"
+    title="The AI Takeover: Should We Be Worried?"
     readTime={8}
-    description="In the digital age, where cameras are in everyone’s pocket, the resurgence of film photography might seem surprising. Yet, it has evolved from a medium of necessity to a cherished art form."
+    description="Artificial Intelligence is advancing at an insane pace, but should we be concerned? While AI is great at making our lives easier (hello, ChatGPT), it also raises ethical questions about job loss and bias. The key? Responsible AI development and a human-first approach. For now, let's just hope Skynet isn’t real."
     tags={["Life", "Anime", "Tech"]}
     image={Hero}
     className="flex-1"
@@ -118,7 +119,7 @@ const Home = () => {
 <div className='py-14 bg-white  '>
               <Container>
                   <div className='flex justify-evenly gap-8 '>
-                      {posts.slice(0,4).map((post) => (
+                      {posts.slice(-4).map((post) => (
                           <div key={post.$id} className=''>
                               <TiltedCard {...post}
                               />

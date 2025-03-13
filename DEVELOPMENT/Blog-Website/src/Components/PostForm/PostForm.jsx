@@ -77,13 +77,13 @@ const slugTransform = useCallback((value) => {
                 <Input
                     label="Title :"
                     placeholder="Title"
-                    className="mb-4 bg-black"
+                    className="mb-4 bg-black text-white focus:bg-neutral-900 focus:outline-none "
                     {...register("title", { required: true })}
                 />
                 <Input
                     label="Slug :"
                     placeholder="Slug"
-                    className="mb-4"
+                    className="mb-4 bg-black text-white focus:bg-neutral-900 focus:outline-none"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
@@ -95,7 +95,7 @@ const slugTransform = useCallback((value) => {
                 <Input
                     label="Featured Image :"
                     type="file"
-                    className="mb-4"
+                    className="mb-4 bg-black text-white focus:bg-gray-900 focus:outline-none"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
@@ -111,7 +111,7 @@ const slugTransform = useCallback((value) => {
                 <Select
                     options={["active", "inactive"]}
                     label="Status"
-                    className="mb-4"
+                    className="mb-4 focus:bg-neutral-900 focus:outline-none"
                     {...register("status", { required: true })}
                 />
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">

@@ -46,7 +46,7 @@ const SignUp = () => {
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
                 <form onSubmit={handleSubmit(create)}>
-                    <div className='space-y-5'>
+                    <div className='space-y-4'>
                         <Input
                             label="FullName: "
                             placeholder="Enter your fullname"

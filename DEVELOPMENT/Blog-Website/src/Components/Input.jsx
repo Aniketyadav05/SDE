@@ -8,16 +8,16 @@ const Input = React.forwardRef(function Input({
 }, ref) {
     const id = useId();
     return (
-        <div className='w-full text-white font-bold mx-auto'>
+        <div className='w-full  font-bold mx-auto'>
             {label && <label
-                className='inline-block pl-1 mb-6 mx-2'
+                className={`inline-block pl-1 mb-6 mx-2 bg-inherit ${className}`}
                 htmlFor={id}>
                 {label}
             </label>
             }
             <input
             type={type}
-            className={`px-3 py-2 mx-2 rounded-lg bg-black text-white outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full${className}`}
+            className={`px-3 py-2 mx-2 rounded-lg   focus:bg-gray-50 duration-200 border border-gray-200 w-full${className}`}
             ref={ref}
             {...props}
             id={id}

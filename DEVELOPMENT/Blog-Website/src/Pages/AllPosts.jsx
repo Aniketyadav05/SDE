@@ -17,10 +17,10 @@ const AllPosts = () => {
     
   return !Loading ? (
     <FadeInWrapper>
-    <div className=' w-full py-8 bg-[#ebebe8]'>
+    <div className=' w-full py-8 bg-[#ebebe8] min-h-screen'>
         <Container>
             <div className='flex flex-wrap gap-6'>
-                {posts.map((post) => (
+                {[...posts].reverse().map((post) => (
                     <div key={post.$id} className=''>
                         <TiltedCard {...post}
                         />

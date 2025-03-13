@@ -28,13 +28,16 @@ const Post = () => {
                 appwriteService.deleteFile(post.featuredImage);
                 navigate("/");
             }
+            else{
+                console.log("nhi hu idelte")
+            }
         });
     };
 
     return post ? (
         <div className="py-8">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2 h-100">
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
@@ -43,20 +46,19 @@ const Post = () => {
 
                     {isAuthor && (
                         <div className="absolute right-6 top-6 ">
-                                <Button1 text="Edit" link={`/edit-post/${post.$id}`} bgColor="bg-green-500" className="mr-3 w-15 mb-4">
+                                <Button1 text="Edit" link={`/edit-post/${post.$id}`}  className="mr-3 w-20 mb-6"/>
                                   
-                                </Button1>
+                                
                            
-                            <Button1 text="Delete" bgColor="bg-red-500" className="w-15" onClick={deletePost}>
+                            <Button1 text="Delete"  className="w-20" onClick={deletePost}/>
             
-                            </Button1>
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
+                <div className="w-full mb-6 text-white">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="text-white">
                     {parse(post.content)}
                     </div>
             </Container>

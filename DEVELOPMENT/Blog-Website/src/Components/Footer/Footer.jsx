@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-
+import { FaGithub,FaSkullCrossbones } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin} from "react-icons/fa6";
+import { Button1 } from '..';
 function Footer() {
   return (
     <footer className="bg-[rgba(30,30,30,255)] text-gray-400 py-6 px-10 mt-auto">
@@ -16,33 +18,21 @@ function Footer() {
 
         {/* Social Icons */}
         <div className="flex space-x-4">
-          <div className="bg-orange-500 p-3 rounded-full shadow-md hover:scale-105 transition">
-            <i className="fab fa-instagram text-black"></i>
-          </div>
-          <div className="bg-orange-500 p-3 rounded-full shadow-md hover:scale-105 transition">
-            <i className="fab fa-youtube text-black"></i>
-          </div>
-          <div className="bg-orange-500 p-3 rounded-full shadow-md hover:scale-105 transition">
-            <i className="fab fa-facebook text-black"></i>
-          </div>
+        <Button1 icon={FaGithub} link="https://github.com/Aniketyadav05" className="shadow-gray-700 text-black"/>
+        <Button1 icon={FaXTwitter} link="https://x.com/AniketYadav05_" className=" shadow-gray-700 " />
+        <Button1 icon={FaLinkedin} link="/dashboard" className=" shadow-gray-700 " />
+        <Button1 icon={FaSkullCrossbones} link="/policy" className=" shadow-gray-700 " />
         </div>
       </div>
 
       {/* Footer Navigation */}
       <div className="border-t border-gray-700 mt-6 pt-4 flex justify-between text-sm">
         <div className="flex space-x-6">
-          <Link to="/" className="hover:text-white">Terms & Conditions</Link>
-          <Link to="/" className="hover:text-white">Cookie & Policy</Link>
+          <Link to="/policy" className="hover:text-white">Terms & Conditions</Link>
+          <Link to="/policy" className="hover:text-white">Cookie & Policy</Link>
         </div>
-        <div className="flex space-x-6">
-          <Link to="/" className="hover:text-white">Latest</Link>
-          <Link to="/" className="hover:text-white">Trending</Link>
-          <Link to="/" className="hover:text-white">Art</Link>
-          <Link to="/" className="hover:text-white">Design</Link>
-          <Link to="/" className="hover:text-white">Music</Link>
-          <Link to="/" className="hover:text-white">Podcast</Link>
-        </div>
-        <p>© 2025 The Blog. All rights reserved.</p>
+        
+        <p>© 2025 The DEV DEN. All rights reserved.</p>
       </div>
     </footer>
   )
