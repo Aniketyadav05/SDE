@@ -7,10 +7,10 @@ const BlogCard = ({ date, title, readTime, description, tags, image, className }
         <p className="text-gray-500 text-sm">{date}</p>
         <h2 className="text-xl font-bold text-gray-900 mt-1">{title}</h2>
         <p className="text-gray-500 text-sm mb-4">{readTime} min read</p>
-        <p className="text-gray-700">{description}</p>
+        <p className="text-gray-700 text-l font-bold ">{description}</p>
         <div className="mt-4 flex gap-2">
           {tags.map((tag, index) => (
-            <span key={index} className="bg-gray-800 text-white text-xs px-3 py-1 rounded-full">
+            <span key={index} className="bg-gray-800 text-white text-xs px-3 py-1 rounded-full mt-10 cursor-pointer">
               {tag}
             </span>
           ))}

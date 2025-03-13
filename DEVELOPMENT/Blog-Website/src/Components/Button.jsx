@@ -10,7 +10,7 @@ const Button = ({
 }) => {
   return (
     <button 
-        className={`relative w-16 h-16 rounded-full bg-orange-500 shadow-lg shadow-gray-700 flex items-center justify-center ${className} ${bgColor} ${textColor}`} {...props}>
+        className={`relative cursor-pointer w-16 h-16 rounded-full bg-orange-500 shadow-lg shadow-gray-700 flex items-center justify-center ${className} ${bgColor} ${textColor}`} {...props}>
         {children}
     </button>    
 )

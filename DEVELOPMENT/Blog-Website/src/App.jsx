@@ -5,6 +5,7 @@ import {login, logout} from './Store/authSlice'
 import {Header,Footer} from './Components/index'
 import { Outlet } from 'react-router-dom'
 import FadeInWrapper from './Components/Animation/FadeInWrapper'
+import ShinyText from './Components/Animation/ShinyText'
 const App = () => {
   const [Loading,setLoading] = useState(true);
   const dispatch = useDispatch()
@@ -34,14 +35,9 @@ const App = () => {
         </div>
       </div>
       </FadeInWrapper>
-  ) : /* From Uiverse.io by SmookyDev */ 
-  <div
-    className="w-32 aspect-square rounded-full relative flex justify-center items-center animate-[spin_3s_linear_infinite] z-40 bg-[conic-gradient(white_0deg,white_300deg,transparent_270deg,transparent_360deg)] before:animate-[spin_2s_linear_infinite] before:absolute before:w-[60%] before:aspect-square before:rounded-full before:z-[80] before:bg-[conic-gradient(white_0deg,white_270deg,transparent_180deg,transparent_360deg)] after:absolute after:w-3/4 after:aspect-square after:rounded-full after:z-[60] after:animate-[spin_3s_linear_infinite] after:bg-[conic-gradient(#065f46_0deg,#065f46_180deg,transparent_180deg,transparent_360deg)]"
-  >
-    <span
-      className="absolute w-[85%] aspect-square rounded-full z-[60] animate-[spin_5s_linear_infinite] bg-[conic-gradient(#34d399_0deg,#34d399_180deg,transparent_180deg,transparent_360deg)]"
-    >
-    </span>
+  ) : 
+  <div className='flex items-center justify-center min-h-screen bg-black'>
+  <ShinyText text="THE DEV DEN" disabled={false} speed={3} className="text-lg font-bold tracking-wide text-[rgba(106,111,113,255)] rock-salt "/>
   </div>
   
 }

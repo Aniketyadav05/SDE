@@ -64,7 +64,7 @@ const Login = () => {
                 <Input
                     label="Password: "
                     type="password"
-                    placeholder="ENter your password"
+                    placeholder="Enter your password"
                     {...register("password",{
                         required: true,
                     })}
@@ -72,7 +72,7 @@ const Login = () => {
                 <Button
                     className="w-full"
                     type="submit"
-                >Sign in</Button>
+                >Log in</Button>
             </div>
         </form>
         </div>

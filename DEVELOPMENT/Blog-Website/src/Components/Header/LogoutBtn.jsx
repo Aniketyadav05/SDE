@@ -11,7 +11,7 @@ const LogoutBtn = () => {
   }
   return (
     <button onClick={logoutHandler}
-    className='font-[Hind Madurai] cursor-pointer'>Logout</button>
+    className='font-[Hind Madurai] cursor-pointer hover:text-[#ffffffbe]'>Logout</button>
   )
 }
 

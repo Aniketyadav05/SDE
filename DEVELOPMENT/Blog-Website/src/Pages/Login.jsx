@@ -1,10 +1,12 @@
 import React from 'react'
-import {Login} from '../Components/index'
+import {FadeInWrapper, Login} from '../Components/index'
 const Login = () => {
   return (
+    <FadeInWrapper>
     <div className='py-8'>
         <Login/>
     </div>
+    </FadeInWrapper>
   )
 }
 

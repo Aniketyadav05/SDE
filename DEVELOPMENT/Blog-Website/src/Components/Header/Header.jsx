@@ -46,10 +46,10 @@ const Header = () => {
               <ShinyText text="THE DEV DEN" disabled={false} speed={3} className="text-lg font-bold tracking-wide text-[rgba(106,111,113,255)] rock-salt "/>
             </Link>
           </div>
-          <ul className="flex space-x-6 text-sm font-semibold text-white"> 
+          <ul className="flex space-x-6 text-sm font-semibold text-white "> 
             {navItems.map((item,index) => 
               item.active ? (
-                <li key={index}>
+                <li key={index}  className='hover:text-[#ffffffbe]'>
                   <Link
                     to={item.slug}
                     onClick={() => navigate(item.slug)}

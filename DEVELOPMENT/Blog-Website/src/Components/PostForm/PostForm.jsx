@@ -72,12 +72,12 @@ const slugTransform = useCallback((value) => {
     },[watch,slugTransform,setValue])
     
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+    <form onSubmit={handleSubmit(submit)} className="flex ">
             <div className="w-2/3 px-2">
                 <Input
                     label="Title :"
                     placeholder="Title"
-                    className="mb-4"
+                    className="mb-4 bg-black"
                     {...register("title", { required: true })}
                 />
                 <Input

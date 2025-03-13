@@ -40,7 +40,7 @@ const SignUp = () => {
                         to="/login"
                         className="font-medium text-primary transition-all duration-200 hover:underline"
                     >
-                        Sign In
+                        Log In
                     </Link>
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
@@ -49,7 +49,7 @@ const SignUp = () => {
                     <div className='space-y-5'>
                         <Input
                             label="FullName: "
-                            placeholder="enter your fullname"
+                            placeholder="Enter your fullname"
                             {...register("name", {
                                 required: true,
                             })}
@@ -70,12 +70,12 @@ const SignUp = () => {
                         <Input
                         label="Password: "
                         type="password"
-                        placeholder="enter your password"
+                        placeholder="Enter your password"
                         {...register("password",{
                             required:true
                         })}
                         />
-                        <Button type="submit" className="w-full">
+                        <Button type="submit" className="w-full ">
                             Create Account
                         </Button>
                     </div>
