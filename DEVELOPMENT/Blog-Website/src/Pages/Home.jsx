@@ -5,6 +5,8 @@ import BlurText from '../Components/Animation/BlurText';
 import SplitText from '../Components/Animation/SplitText';
 import Hero from "../Components/Hero.jpg"
 import TiltedCard from '../Components/Animation/TitledCard';
+import { FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 const Home = () => {
     const [posts, setPosts] = useState([])
 
@@ -36,9 +38,11 @@ const Home = () => {
            
           </div>
           <p className="text-gray-400 font-extrabold mt-4 ml-4">Blog about Tech<br />Life<br />Anime.</p>
-          <div className="flex space-x-4 ml-40">
-          <Button1 icon="fab fa-instagram" link="https://instagram.com" className="shadow-gray-700" />
-          <Button1 text="Go" link="/dashboard" className="w-16 h-10 shadow-gray-700 " />
+          <div className="flex space-x-4 ml-96 mt-4">
+          <Button1 icon={FaGithub} link="https://instagram.com" className="shadow-gray-700 text-black"/>
+      
+    
+          <Button1 icon={FaXTwitter} link="/dashboard" className=" shadow-gray-700 " />
 
           </div>
           
