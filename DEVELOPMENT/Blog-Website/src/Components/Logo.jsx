@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Logo({width = '100px'}) {
+function Logo({className}) {
   return (
-    <div>Logo</div>
+    <h1 className={`text-[rgba(106,111,113,255)] rock-salt   ${className}`}>The Dev Den</h1>
   )
 }
 

@@ -3,6 +3,7 @@ import {Container, Logo,LogoutBtn} from '../index'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import ShinyText from '../Animation/ShinyText'
 
 
 const Header = () => {
@@ -37,22 +38,22 @@ const Header = () => {
   },
   ]
   return (
-    <div className='py-3 shadow bg-gray-400'>
+    <div className='py-3 shadow bg-[rgba(30,30,30,255)]'>
       <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
+        <nav className=" text-gray-300 py-4 flex justify-between items-center">
+          <div className=''>
             <Link to='/'>
-              <Logo width='70px'/>
+              <ShinyText text="THE DEV DEN" disabled={false} speed={3} className="text-lg font-bold tracking-wide text-[rgba(106,111,113,255)] rock-salt "/>
             </Link>
           </div>
-          <ul className='flex ml-auto'> 
+          <ul className="flex space-x-6 text-sm font-semibold text-white"> 
             {navItems.map((item,index) => 
               item.active ? (
                 <li key={index}>
-                  <button
+                  <Link
+                    to={item.slug}
                     onClick={() => navigate(item.slug)}
-                    className='inline-block px-6 py-2 bg-[#eb7160] duration-200 hover:bg-[#b96a67fd] rounded-full'
-                  >{item.name}</button>
+                  >{item.name}</Link>
                 </li>
               ): null
             )}

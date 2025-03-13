@@ -1,4 +1,4 @@
-import config from "../config/config";
+import config from "../config/config.js";
 import {Client, Databases,Storage,Query, ID} from "appwrite";
 
 
@@ -80,7 +80,7 @@ export class Service{
             
         }
     }
-    async getPosts(queries = [Query.equal("Status","active")]){
+    async getPosts(queries = [Query.equal("status","active")]){
         // ,Query.limit(30),Query.offset(0)
         try {
             return await this.databases.listDocuments(
@@ -97,18 +97,21 @@ export class Service{
 
     // files methods
 
-    async uploadFile(file){
+    async uploadFile(file) {
         try {
-            return await this.bucket.createFile(
-                config.appwriteBucketId,
-                ID.unique(),
-                file,
-            )
+          console.log("Uploading file:", file);
+          const response = await this.bucket.createFile(
+            config.appwriteBucketId,
+            ID.unique(),
+            file,
+          );
+          console.log("File uploaded successfully:", response);
+          return response;
         } catch (error) {
-            console.log("uploadFile ka error",error);
-            
+          console.error("uploadFile error:", error);
+          throw error; // Re-throw the error for the caller to handle
         }
-    }
+      }
 
     async deleteFile(fileId){
         try {
@@ -125,12 +128,13 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
+    getFilePreview(fileId) {
         return this.bucket.getFilePreview(
             config.appwriteBucketId,
             fileId
-        )
+        );
     }
+    
 
     
 

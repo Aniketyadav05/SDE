@@ -12,18 +12,18 @@ export class AuthService {
         this.account = new Account(this.client);
     }
 
-    async createAccount({email,password,name}){
+    async createAccount({ email, password, name }) {
         try {
-            const userAccount = await this.account.create(ID.unique(),email,password,name)
-            if(userAccount){
-                // call another method
-                return this.login({email,password});
-            }
-            else{
-                return userAccount;
+            const userAccount = await this.account.create(ID.unique(), email, password, name);
+            if (userAccount) {
+                // Log in the user after account creation
+                return await this.login({ email, password });
+            } else {
+                throw new Error("Account creation failed.");
             }
         } catch (error) {
-            throw error;
+            console.error("createAccount error", error);
+            throw error; // Re-throw the error for the caller to handle
         }
     }
     async login({email,password}){
@@ -33,15 +33,27 @@ export class AuthService {
             throw error;
         }
     }
-    async getCurrentUser(){
+    async getCurrentUser() {
         try {
-            await this.account.get();
+            const user = await this.account.get();
+            console.log("Appwrite service :: getCurrentUser :: user", user);
+            return user;
         } catch (error) {
-            throw error;
+            console.error("Appwrite service :: getCurrentUser :: error", error);
+    
+            // Handle specific error cases
+            if (error.code === 401 || error.type === "user_not_authenticated") {
+                console.log("User is not authenticated. Redirecting to login...");
+                // Redirect the user to the login page or perform other actions
+                
+            } else {
+                console.error("Unexpected error:", error);
+            }
+    
+            return null;
         }
-
-        return null;
     }
+    
 
     async logout(){
         try {
